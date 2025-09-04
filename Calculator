@@ -1,0 +1,48 @@
+import math
+def calculator():
+    print(" Python Calculator")
+    print("----------------------")
+    print("Available operations:")
+    print("1. Addition (+)")
+    print("2. Subtraction (-)")
+    print("3. Multiplication (*)")
+    print("4. Division (/)")
+    print("5. Power (^)")
+    print("6. Square Root (√)")
+    print("7. Modulus (%)")
+    print("0. Exit")
+
+    while True:
+        choice = input("\nEnter your choice (0-7): ")
+
+        if choice == "0":
+            print("Goodbye!")
+            break
+
+        elif choice == "6":
+            num = float(input("Enter a number: "))
+            print(f"√{num} = {math.sqrt(num)}")
+
+        else:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+
+            if choice == "1":
+                print(f"{num1} + {num2} = {num1 + num2}")
+            elif choice == "2":
+                print(f"{num1} - {num2} = {num1 - num2}")
+            elif choice == "3":
+                print(f"{num1} * {num2} = {num1 * num2}")
+            elif choice == "4":
+                if num2 != 0:
+                    print(f"{num1} / {num2} = {num1 / num2}")
+                else:
+                    print("Error: Division by zero!")
+            elif choice == "5":
+                print(f"{num1} ^ {num2} = {math.pow(num1, num2)}")
+            elif choice == "7":
+                print(f"{num1} % {num2} = {num1 % num2}")
+            else:
+                print("Invalid choice. Please try again!")
+                continue
+calculator()
